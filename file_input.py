@@ -1,6 +1,5 @@
 from selenium import webdriver
 import time
-import os 
 
 current_dir = os.path.abspath(os.path.dirname(__file__))
 file_path = os.path.join(current_dir, 'file.txt')
@@ -10,7 +9,7 @@ try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    # Ваш код, который заполняет обязательные поля
+    # Ваш код
     fname = browser.find_element_by_css_selector("body > div > form > div > input:nth-child(2)")
     fname.send_keys('name')
 
@@ -42,6 +41,6 @@ try:
 
 finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта
-    time.sleep(5)
+    time.sleep(4)
     # закрываем браузер после всех манипуляций
     browser.quit()
